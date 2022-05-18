@@ -6,15 +6,18 @@ import { Footer } from '../components/Footer'
 import { Section } from '../components/Section'
 import { Header } from '../components/Header'
 import { Contact } from '../components/Contact'
+import { Section2 } from '../components/Section2'
 
 export default function Home() {
   return (
     <div>
       <Navbar/>
       <Header/>
+      <Section2/>
       <Section/>
       <Contact/>
       <Footer/>
+      
     </div>
   )
 }
