@@ -2,6 +2,7 @@ import { data } from "autoprefixer"
 import Image from "next/image"
 import useSWR from "swr";
 import React from "react";
+import Link from "next/link";
 
 export const Section2 = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -30,7 +31,10 @@ export const Section2 = () => {
           {data.map(compe => {return <>
           <div key={compe.id} className="p-4 md:w-1/3">
           <div className="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">
+            
+          <Link href="/competencias/[id]" as={`/competencias/${compe.id}`}>
             <img width="50px" height="50px" className="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100" src={`https://chillin.cl/${compe.image}`} alt="blog"/>
+            </Link>
             <div className="p-6">
               <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY-1</h2>
               <h1 className="title-font text-lg font-medium text-gray-600 mb-3">{ compe.title }</h1>
