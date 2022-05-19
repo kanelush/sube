@@ -32,7 +32,6 @@ export const getStaticProps = async (context) => {
 const SingleNegocioPage = ({ competencia }) => {
     return(
     <>
-    <Navbar/>
     
     
     <div className="flex justify-center my-10">

@@ -1,8 +1,11 @@
 import '../styles/globals.css'
 import { motion } from 'framer-motion'
+import { Navbar } from '../components/Navbar'
 
 function MyApp({ Component, pageProps, router }) {
   return (
+   <>
+   <Navbar/>
   <motion.div key={router.route} initial='pageInitial' animate='pageAnimate' variants={{
     pageInitial: {
       opacity:0,
@@ -20,6 +23,7 @@ function MyApp({ Component, pageProps, router }) {
   }}>
   <Component {...pageProps} />
   </motion.div>
+  </> 
   )
 }
 
