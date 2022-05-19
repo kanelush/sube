@@ -24,7 +24,7 @@ export const Header = () => {
 
   return (
     <>
-    <div className='hero'>
+    <div className='hero pt-20 justify-center'>
       <motion.div initial='hidden' animate='visible' variants={{
         hidden: {
           scale: .8,
@@ -38,7 +38,11 @@ export const Header = () => {
           }
         }
       }}>
-    <h1 className='text-8xl text-center mt-10 m-auto'>Header magnate</h1>
+    {/* <h1 className='text-8xl text-center mt-10 m-auto'>Header magnate</h1> */}
+        <h1 className='text-4xl text-gray-700 font-bold text-center pb-1'>Ignacio Cárdenas B.</h1>
+        <h1 className='text-2xl text-gray-700 text-center'>Ingeniero Comercial</h1>
+        <h1 className='text-2xl text-gray-700 text-center'>Msc Marketing</h1>
+        <h1 className='text-2xl text-gray-700 text-center'>Software Developer</h1>
     </motion.div>
     </div>
     

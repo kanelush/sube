@@ -24,7 +24,7 @@ return (
   <Link href="/">
   <a className="cursor-pointer flex items-center">
       <Image width="50px" height="50px" src="/xd.png" className="mr-3 h-6 sm:h-9" alt="logo" />
-      <span className="self-center text-2xl  whitespace-nowrap dark:text-white">mynav</span>
+      <span className="self-center text-2xl  whitespace-nowrap font-bold mx-auto">@myweb</span>
   </a>
   </Link>
   <button onClick={() => efecto()} data-collapse-toggle="mobile-menu" type="button" className="transition-all inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
@@ -37,7 +37,7 @@ return (
       <Link href="/">
         <a href="" onClick={() => setTurnonn(false)} className="cursor-pointer block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Inicio</a>
       </Link>
-      <Link href="/about">
+      <Link href="/servicios">
         <a href="" onClick={() => setTurnonn(false)} className="cursor-pointer block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Servicio</a>
       </Link>
       <Link href="/contact">

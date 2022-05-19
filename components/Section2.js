@@ -27,7 +27,7 @@ export const Section2 = () => {
       <section className="text-gray-600 body-font">
       
       <div className="container px-5 py-24 mx-auto">
-      <h1 className="title-font text-4xl font-bold text-gray-600 mb-6 text-center">Experiencia Comprobable</h1>
+      <h1 className="title-font text-4xl font-bold text-gray-700 mb-6 text-center">Experiencia Comprobable</h1>
         <div className="flex flex-wrap -m-4">
           {data.map(compe => {return <>
           <motion.div key={compe.id} className="p-4 md:w-1/3" whileHover={{
