@@ -3,6 +3,7 @@ import Image from "next/image"
 import useSWR from "swr";
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export const Section2 = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -29,7 +30,14 @@ export const Section2 = () => {
       <h1 className="title-font text-4xl font-bold text-gray-600 mb-6 text-center">Experiencia Comprobable</h1>
         <div className="flex flex-wrap -m-4">
           {data.map(compe => {return <>
-          <div key={compe.id} className="p-4 md:w-1/3">
+          <motion.div key={compe.id} className="p-4 md:w-1/3" whileHover={{
+            position:'relative',
+            zIndex: 1,
+            
+            transition: {
+              duration: .1
+            }
+          }}>
           <div className="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">
             
           <Link href="/competencias/[id]" as={`/competencias/${compe.id}`}>
@@ -45,7 +53,7 @@ export const Section2 = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         </>
           })}
           

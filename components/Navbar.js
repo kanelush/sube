@@ -19,7 +19,7 @@ function efecto(){
 return (
   
   <>
-  <nav className="z-40 sticky top-0 bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 mb-26">
+  <nav className="z-40 sticky top-0 bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded  mb-26">
 <div className="container flex flex-wrap justify-between items-center mx-auto">
   <Link href="/">
   <a className="cursor-pointer flex items-center">

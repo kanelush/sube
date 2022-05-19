@@ -1,9 +1,38 @@
+import { useInView } from "react-intersection-observer"
+import { useEffect } from "react";
+import { useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
+
 export const Section = () => {
+    const {ref, inView} = useInView({
+          threshold: 0.2
+    });
+
+    const animation = useAnimation();
+
+    useEffect(() => {
+      console.log("Hello use effect, inView: ", inView);
+      if(inView){
+        animation.start({
+          x: 0,
+          transition:{
+            type:'spring',
+            duration:1,
+            bounce:.3
+          }
+        });
+        if(!inView){
+            animation.start({x:'-100vw'})
+        }
+      }
+      console.log("Hello use effect, inView: ", inView);
+    }, [inView])
+
     return(
         <>
-        <section className="text-gray-600 body-font">
+        <motion.section animate={animation} ref={ref} className="text-gray-600 body-font">
         
-        <div className="container px-5 py-24 mx-auto">
+        <div animate={animation} ref={ref} className="container px-5 py-24 mx-auto">
         <h1 className="title-font text-4xl font-bold text-gray-600 mb-6 text-center">Experiencia Comprobable</h1>
           <div className="flex flex-wrap -m-4">
             <div className="p-4 md:w-1/3">
@@ -92,7 +121,7 @@ export const Section = () => {
               </div>
           </div>
         </div>
-      </section>
+      </motion.section>
       </>
     )
 }

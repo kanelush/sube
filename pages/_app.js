@@ -1,7 +1,26 @@
 import '../styles/globals.css'
+import { motion } from 'framer-motion'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps, router }) {
+  return (
+  <motion.div key={router.route} initial='pageInitial' animate='pageAnimate' variants={{
+    pageInitial: {
+      opacity:0,
+      x:-200
+    },
+    pageAnimate: {
+      opacity:1,
+      x:0,
+      transition: {
+        duration:1,
+        type:'spring',
+        bounce: 0.3,
+      }
+    }
+  }}>
+  <Component {...pageProps} />
+  </motion.div>
+  )
 }
 
 export default MyApp

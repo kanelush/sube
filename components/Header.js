@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import useSWR from 'swr'
+import { motion } from 'framer-motion'
 
 export const Header = () => {
   
@@ -24,7 +25,21 @@ export const Header = () => {
   return (
     <>
     <div className='hero'>
+      <motion.div initial='hidden' animate='visible' variants={{
+        hidden: {
+          scale: .8,
+          opacity: 0
+        },
+        visible:{
+          scale: 1,
+          opacity: 1,
+          transition: {
+            delay: .4
+          }
+        }
+      }}>
     <h1 className='text-8xl text-center mt-10 m-auto'>Header magnate</h1>
+    </motion.div>
     </div>
     
     
