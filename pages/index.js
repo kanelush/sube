@@ -13,7 +13,6 @@ export default function Home() {
     <div>
       <Header/>
       <Section2/>
-      <Section/>
       <Contact/>
       <Footer/>
       

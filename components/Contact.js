@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
-
+import { motion } from 'framer-motion'
 
 export const Contact = () => {
   const [name, setName] = useState('');
@@ -33,7 +33,17 @@ export const Contact = () => {
        setDescription('')
   }
   return (
-    <>
+    <motion.div className="container" initial='first' animate='last' variants={{
+      first: {
+        opacity:0
+      },
+      last: {
+        opacity:1,
+        transition: {
+          duration:1
+        }
+      }
+    }}>
     
     <h1 className="text-4xl text-green-600 text-center font-bold mt-6 mb-10">Contáctanos</h1>
     <div className="flex w-2/3 pb-10 pt-5 mx-auto rounded-lg justify-center bg-emerald-500 mb-12">
@@ -57,6 +67,6 @@ export const Contact = () => {
     
     </form>
     </div>
-    </>
+    </motion.div>
   )
 }

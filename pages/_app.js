@@ -17,7 +17,8 @@ function MyApp({ Component, pageProps, router }) {
       transition: {
         duration:1,
         type:'spring',
-        bounce: 0.3,
+        bounce: 0.1,
+
       }
     }
   }}>

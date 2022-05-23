@@ -18,7 +18,8 @@ export const Section = () => {
           transition:{
             type:'spring',
             duration:1,
-            bounce:.3
+            ease: "easeInOut",
+
           }
         });
         if(!inView){

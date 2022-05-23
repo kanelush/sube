@@ -24,8 +24,7 @@ export const Header = () => {
 
   return (
     <>
-    <div className='hero pt-20 justify-center'>
-      <motion.div initial='hidden' animate='visible' variants={{
+      <motion.div initial='hidden' animate='visible' className='hero pt-20 justify-center' variants={{
         hidden: {
           scale: .8,
           opacity: 0
@@ -34,7 +33,8 @@ export const Header = () => {
           scale: 1,
           opacity: 1,
           transition: {
-            delay: .4
+            duration: 0.5,
+            ease: 'easeInOut'
           }
         }
       }}>
@@ -44,7 +44,6 @@ export const Header = () => {
         <h1 className='text-2xl text-gray-700 text-center'>Msc Marketing</h1>
         <h1 className='text-2xl text-gray-700 text-center'>Software Developer</h1>
     </motion.div>
-    </div>
     
     
     </>

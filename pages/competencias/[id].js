@@ -22,17 +22,20 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
     const res = await fetch('https://chillin.cl/api/competencias/' + id);
+    const res1 = await fetch('http://localhost:8000/api/productos/sorted/' + id);
     const data = await res.json()
+    const dato = await res1.json()
+
     return {
         props: {
-            competencia: data
+            competencia: data,
+            productos: dato
         }
     }
 }
-const SingleNegocioPage = ({ competencia }) => {
+const SingleNegocioPage = ({ competencia, productos }) => {
     return(
     <>
-    
     
     <div className="flex justify-center my-10">
         <div key={competencia.id} className="cursor-pointer rounded-lg shadow-lg pb-4 my-10 bg-white max-w-sm hover:bg-slate-200">
@@ -43,6 +46,7 @@ const SingleNegocioPage = ({ competencia }) => {
           </div>
         <Contact/>
         </div>
+        {productos.map(producto => {return <h1>{producto.name}</h1>})}
     </div>
     </>
     )

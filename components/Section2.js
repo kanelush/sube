@@ -4,6 +4,7 @@ import useSWR from "swr";
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Loader } from "./Loader";
 
 export const Section2 = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -19,7 +20,7 @@ export const Section2 = () => {
   if (!data)
     return (
       <div>
-        <h1 className="text-4xl text-center">Loading...</h1>
+       <Loader/>
       </div>
     );
   return(
@@ -29,13 +30,19 @@ export const Section2 = () => {
       <div className="container px-5 py-24 mx-auto">
       <h1 className="title-font text-4xl font-bold text-gray-700 mb-6 text-center">Experiencia Comprobable</h1>
         <div className="flex flex-wrap -m-4">
-          {data.map(compe => {return <>
-          <motion.div key={compe.id} className="p-4 md:w-1/3" whileHover={{
+          {data.map((compe, i) => {return <>
+          <motion.div key={compe.id} initial='first' animate='last' transition={{duration:0.3, delay: i *0.1}} className="p-4 md:w-1/3" whileHover={{
             position:'relative',
             zIndex: 1,
-            
             transition: {
               duration: .1
+            }
+          }} variants={{
+            first: {
+              opacity:0,
+            },
+            last: {
+              opacity:1,
             }
           }}>
           <div className="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">

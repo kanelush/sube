@@ -1,10 +1,21 @@
 import React from 'react'
 import { Contact } from './Contact'
+import { motion } from 'framer-motion'
 
 export const Footer = () => {
   return (
     <>
-        <footer className="bg-gray-800">
+    <motion.footer className="bg-gray-600 bottom-0 inset-x-0" initial='first' animate='last' variants={{
+      first: {
+        opacity:0
+      },
+      last: {
+        opacity:1,
+        transition: {
+          duration:1.2
+        }
+      }
+    }}>
     <div className="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
         <div>
             <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">Company</h2>
@@ -73,7 +84,7 @@ export const Footer = () => {
         </div>
     </div>
     <div className="py-6 px-4 bg-gray-700 md:flex md:items-center md:justify-between">
-        <span className="text-sm text-gray-300 sm:text-center">© 2022 <a href="https://flowbite.com">Flowbite™</a>. All Rights Reserved.
+        <span className="text-sm text-gray-300 sm:text-center">© 2022 <a href="https://flowbite.com">Ignacio Cárdenas</a>. All Rights Reserved.
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white">
@@ -93,7 +104,7 @@ export const Footer = () => {
             </a>
         </div>
     </div>
-</footer>
+</motion.footer>
     </>
   )
 }
